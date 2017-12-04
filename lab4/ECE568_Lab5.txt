@@ -1,0 +1,12 @@
+b 4 Documentation
+*       Written by:
+*           -- Ringo Cheung    (1000463955)
+*           -- Yassir Solomah  (1000458284)
+*       Code written by all members over multiple sessions.
+*******************************************************************************
+
+
+
+FILES CHANGED:
+_______________________________________________________________________________
+
