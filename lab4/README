@@ -1,0 +1,61 @@
+# Yassir Solomah, 1000458284, yassir.solomah@mail.utoronto.ca
+# Ringo Cheung, 1000463955, rh.cheung@mail.utoronto.ca
+
+
+
+Part1:
+In this attack, we use inject HTML and Javascript to phish for credentials
+Redirects to attack URL on form submission
+
+
+Part2:
+'field1' is vulnerable, and allows for script injection
+Note, requires clicking of the purchase button twice
+URL is: http://localhost:8090/WebGoat/catcher?src=1406352188&menu=900&PROPERTY=yes&card=
+Card number is captured from 'field2'
+
+
+Part3:
+Exploit message field, makes GET request from page, attempting to use the victims cookies
+
+
+Part4:
+Exploit message field, makes GET request from page, attempting to use the victims cookies
+On load, sets the second url to confirm transaction
+
+
+Part5:
+Exploit message field, makes GET request from page, attempting to use the victims cookies
+On load, run javascript to capture the nonce value embedded in the page
+
+
+Part6:
+Use an attack string to force the WHERE condition to trivially evaluate to true
+(A! OR A)
+--USERID	FIRST_NAME	LAST_NAME	CC_NUMBER	CC_TYPE	COOKIE	LOGIN_COUNT
+--101	Joe	Snow	987654321	VISA	 	0
+--101	Joe	Snow	2234200065411	MC	 	0
+--102	John	Smith	2435600002222	MC	 	0
+--102	John	Smith	4352209902222	AMEX	 	0
+--103	Jane	Plane	123456789	MC	 	0
+--103	Jane	Plane	333498703333	AMEX	 	0
+--10312	Jolly	Hershey	176896789	MC	 	0
+--10312	Jolly	Hershey	333300003333	AMEX	 	0
+--10323	Grumpy	youaretheweakestlink	673834489	MC	 	0
+--10323	Grumpy	youaretheweakestlink	33413003333	AMEX	 	0
+--15603	Peter	Sand	123609789	MC	 	0
+--15603	Peter	Sand	338893453333	AMEX	 	0
+--15613	Joesph	Something	33843453533	AMEX	 	0
+
+
+Part7:
+Database backdoor, injecting update statements
+Injection of trigger to update on insertion
+
+
+Part8:
+Extend where condition by using 101 (always evaluates to true)
+Complete a binary search on 10^4 possibilities for pin
+Narrow in on 2364
+Use of AND statement:
+(True AND pin == ...)
